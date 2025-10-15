@@ -421,6 +421,66 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
         return iconMap[socialName] || FaGlobe || Globe;
     };
 
+    // Función para obtener el icono según el nombre del indicador
+    const getIndicatorIcon = (name) => {
+        const indicatorName = name?.toLowerCase() || '';
+        
+        // Mapeo de nombres a componentes de iconos de lucide-react
+        if (indicatorName.includes('cliente') || indicatorName.includes('satisfecho')) return Users;
+        if (indicatorName.includes('país') || indicatorName.includes('pais') || indicatorName.includes('cobertura') || indicatorName.includes('global')) return Globe;
+        if (indicatorName.includes('entrega') || indicatorName.includes('tiempo') || indicatorName.includes('puntual')) return CheckCircle;
+        if (indicatorName.includes('experiencia') || indicatorName.includes('año') || indicatorName.includes('trayectoria')) return Award;
+        if (indicatorName.includes('soporte') || indicatorName.includes('24') || indicatorName.includes('disponibilidad')) return Clock;
+        if (indicatorName.includes('calidad') || indicatorName.includes('excelencia') || indicatorName.includes('star')) return Star;
+        if (indicatorName.includes('seguridad') || indicatorName.includes('protección')) return Shield;
+        if (indicatorName.includes('envío') || indicatorName.includes('paquete') || indicatorName.includes('carga')) return Package;
+        
+        // Icono por defecto
+        return TrendingUp;
+    };
+
+    // Filtrar y preparar indicadores visibles
+    const visibleIndicators = indicators?.filter(ind => ind.visible && ind.status) || [];
+    const statsData = visibleIndicators.length > 0 ? visibleIndicators.map(ind => {
+        return {
+            number: parseInt(ind.number) || 0,
+            suffix: ind.suffix || '',
+            label: ind.name,
+            description: ind.description,
+            icon: getIndicatorIcon(ind.name),
+            image: ind.symbol
+        };
+    }) : [
+        {
+            number: 500,
+            suffix: "+",
+            label: "Clientes Satisfechos",
+            icon: Users,
+            description: "Empresas confían en nosotros",
+        },
+        {
+            number: 50,
+            suffix: "+",
+            label: "Países de Cobertura",
+            icon: Globe,
+            description: "Presencia internacional",
+        },
+        {
+            number: 99,
+            suffix: "%",
+            label: "Entregas a Tiempo",
+            icon: CheckCircle,
+            description: "Puntualidad garantizada",
+        },
+        {
+            number: 15,
+            suffix: "+",
+            label: "Años de Experiencia",
+            icon: Award,
+            description: "Trayectoria comprobada",
+        },
+    ];
+
     const [headerRef, headerVisible] = useIntersectionObserver()
     const [heroRef, heroVisible] = useIntersectionObserver()
     const [servicesRef, servicesVisible] = useIntersectionObserver()
@@ -1060,43 +1120,23 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
 
                     {/* Stats Grid */}
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
-                        {[
-                            {
-                                number: 500,
-                                suffix: "+",
-                                label: "Clientes Satisfechos",
-                                icon: Users,
-                                description: "Empresas confían en nosotros",
-                            },
-                            {
-                                number: 50,
-                                suffix: "+",
-                                label: "Países de Cobertura",
-                                icon: Globe,
-                                description: "Presencia internacional",
-                            },
-                            {
-                                number: 99,
-                                suffix: "%",
-                                label: "Entregas a Tiempo",
-                                icon: CheckCircle,
-                                description: "Puntualidad garantizada",
-                            },
-                            {
-                                number: 15,
-                                suffix: "+",
-                                label: "Años de Experiencia",
-                                icon: Award,
-                                description: "Trayectoria comprobada",
-                            },
-                        ].map((stat, index) => (
+                        {statsData.slice(0, 4).map((stat, index) => (
                             <div
                                 key={index}
                                 className={`text-center text-white animate-fadeInUp`}
                                 style={{ animationDelay: `${index * 200 + 500}ms` }}
                             >
                                 <div className="w-16 h-16 lg:w-20 lg:h-20 bg-[#e5b437]/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-[#e5b437]/30">
-                                    <stat.icon className="w-8 h-8 lg:w-10 lg:h-10 text-[#e5b437]" />
+                                    {stat.image ? (
+                                        <img 
+                                            src={`/api/indicator/media/${stat.image}`} 
+                                            alt={stat.label}
+                                            className="w-8 h-8 lg:w-10 lg:h-10    "
+                                           
+                                        />
+                                    ) : (
+                                        <stat.icon className="w-8 h-8 lg:w-10 lg:h-10 text-[#e5b437]" />
+                                    )}
                                 </div>
                                 <div className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 text-[#e5b437]">
                                     <AnimatedCounter end={stat.number} suffix={stat.suffix} />
@@ -1109,35 +1149,59 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
 
                     {/* Features Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            {
-                                icon: TrendingUp,
-                                title: "Crecimiento Sostenido",
-                                description: "Expandimos nuestras operaciones año tras año, manteniendo la calidad en cada servicio.",
-                            },
-                            {
-                                icon: Shield,
-                                title: "Seguridad Garantizada",
-                                description: "Protocolos de seguridad internacionales y seguros completos para cada envío.",
-                            },
-                            {
-                                icon: Clock,
-                                title: "Disponibilidad 24/7",
-                                description: "Soporte técnico y seguimiento de envíos disponible las 24 horas del día.",
-                            },
-                        ].map((feature, index) => (
-                            <div
-                                key={index}
-                                className={`bg-white/10 backdrop-blur-sm rounded-lg p-6 lg:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 animate-slideInUp`}
-                                style={{ animationDelay: `${index * 200 + 800}ms` }}
-                            >
-                                <div className="w-12 h-12 bg-[#e5b437] rounded-lg flex items-center justify-center mb-4">
-                                    <feature.icon className="w-6 h-6 text-white" />
+                        {benefits && benefits.length > 0 ? (
+                            benefits.slice(0, 6).map((benefit, index) => (
+                                <div
+                                    key={benefit.id || index}
+                                    className={`bg-white/10 backdrop-blur-sm rounded-lg p-6 lg:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 animate-slideInUp`}
+                                    style={{ animationDelay: `${index * 200 + 800}ms` }}
+                                >
+                                    <div className="w-12 h-12 bg-[#e5b437] rounded-lg flex items-center justify-center mb-4">
+                                        {benefit.image ? (
+                                            <img 
+                                                src={`/api/strength/media/${benefit.image}`} 
+                                                alt={benefit.name}
+                                                className="w-6 h-6 object-contain brightness-0 invert"
+                                            />
+                                        ) : (
+                                            <TrendingUp className="w-6 h-6 text-white" />
+                                        )}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-white mb-3">{benefit.name}</h3>
+                                    <p className="text-gray-200 leading-relaxed">{benefit.description}</p>
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                                <p className="text-gray-200 leading-relaxed">{feature.description}</p>
-                            </div>
-                        ))}
+                            ))
+                        ) : (
+                            [
+                                {
+                                    icon: TrendingUp,
+                                    title: "Crecimiento Sostenido",
+                                    description: "Expandimos nuestras operaciones año tras año, manteniendo la calidad en cada servicio.",
+                                },
+                                {
+                                    icon: Shield,
+                                    title: "Seguridad Garantizada",
+                                    description: "Protocolos de seguridad internacionales y seguros completos para cada envío.",
+                                },
+                                {
+                                    icon: Clock,
+                                    title: "Disponibilidad 24/7",
+                                    description: "Soporte técnico y seguimiento de envíos disponible las 24 horas del día.",
+                                },
+                            ].map((feature, index) => (
+                                <div
+                                    key={index}
+                                    className={`bg-white/10 backdrop-blur-sm rounded-lg p-6 lg:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 animate-slideInUp`}
+                                    style={{ animationDelay: `${index * 200 + 800}ms` }}
+                                >
+                                    <div className="w-12 h-12 bg-[#e5b437] rounded-lg flex items-center justify-center mb-4">
+                                        <feature.icon className="w-6 h-6 text-white" />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                                    <p className="text-gray-200 leading-relaxed">{feature.description}</p>
+                                </div>
+                            ))
+                        )}
                     </div>
                 </div>
             </section>
@@ -1150,19 +1214,22 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
             >
                 <div className="container mx-auto px-4 xl:px-6">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                        {[
-                            { number: 500, suffix: "+", label: "Clientes Satisfechos", icon: Users },
-                            { number: 50, suffix: "+", label: "Países de Cobertura", icon: Globe },
-                            { number: 24, suffix: "/7", label: "Soporte Técnico", icon: Clock },
-                            { number: 99, suffix: "%", label: "Entregas a Tiempo", icon: Star },
-                        ].map((stat, index) => (
+                        {statsData.slice(0, 4).map((stat, index) => (
                             <div
                                 key={index}
                                 className={`text-center text-white animate-bounceIn`}
                                 style={{ animationDelay: `${index * 200}ms` }}
                             >
                                 <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
-                                    <stat.icon className="w-6 h-6 lg:w-8 lg:h-8" />
+                                    {stat.image ? (
+                                        <img 
+                                            src={`/api/indicator/media/${stat.image}`} 
+                                            alt={stat.label}
+                                            className="w-6 h-6 lg:w-8 lg:h-8 object-contain brightness-0 invert"
+                                        />
+                                    ) : (
+                                        <stat.icon className="w-6 h-6 lg:w-8 lg:h-8" />
+                                    )}
                                 </div>
                                 <div className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 lg:mb-2">
                                     <AnimatedCounter end={stat.number} suffix={stat.suffix} />
@@ -1194,22 +1261,14 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                             </p>
 
                             <div className="grid grid-cols-3 gap-4 lg:gap-6 mb-6 lg:mb-8">
-                                <div className="text-center animate-fadeInUp animation-delay-300">
-                                    <div className="text-2xl lg:text-3xl font-bold text-[#e5b437] mb-1 lg:mb-2">
-                                        <AnimatedCounter end={500} suffix="+" />
+                                {statsData.slice(0, 3).map((stat, index) => (
+                                    <div key={index} className="text-center animate-fadeInUp" style={{ animationDelay: `${(index + 1) * 200 + 100}ms` }}>
+                                        <div className="text-2xl lg:text-3xl font-bold text-[#e5b437] mb-1 lg:mb-2">
+                                            <AnimatedCounter end={stat.number} suffix={stat.suffix} />
+                                        </div>
+                                        <div className="text-xs lg:text-sm text-gray-300">{stat.label}</div>
                                     </div>
-                                    <div className="text-xs lg:text-sm text-gray-300">Clientes Satisfechos</div>
-                                </div>
-                                <div className="text-center animate-fadeInUp animation-delay-500">
-                                    <div className="text-2xl lg:text-3xl font-bold text-[#e5b437] mb-1 lg:mb-2">
-                                        <AnimatedCounter end={50} suffix="+" />
-                                    </div>
-                                    <div className="text-xs lg:text-sm text-gray-300">Países de Cobertura</div>
-                                </div>
-                                <div className="text-center animate-fadeInUp animation-delay-700">
-                                    <div className="text-2xl lg:text-3xl font-bold text-[#e5b437] mb-1 lg:mb-2">24/7</div>
-                                    <div className="text-xs lg:text-sm text-gray-300">Soporte Técnico</div>
-                                </div>
+                                ))}
                             </div>
 
                             <a href='#inicio' className="bg-[#e5b437] hover:bg-[#d4a332] text-white px-6 lg:px-8 py-2 lg:py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg animate-bounceIn animation-delay-900">

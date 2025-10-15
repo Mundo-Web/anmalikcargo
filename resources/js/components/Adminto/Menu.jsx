@@ -311,7 +311,7 @@ const Menu = ({
                                 >
                                     Nosotros
                                 </MenuItem>*/}
-                              {/*  <MenuItem
+                                <MenuItem
                                     href="/admin/indicators"
                                     icon="mdi mdi-checkbox-marked-outline"
                                 >
@@ -320,12 +320,14 @@ const Menu = ({
                                         "Indicadores"
                                     )}
                                 </MenuItem>
-                                <MenuItem
+                                 <MenuItem
                                     href="/admin/strengths"
                                     icon="mdi mdi-cards-heart"
                                 >
-                                    {t("admin.sidebar.benefits", "Beneficios")}
-                                </MenuItem> */}
+                                    Fortalezas
+                                </MenuItem>
+                              {/*  
+                                */}
                                 {/*  <MenuItem
                                     href="/admin/core_values"
                                     icon="mdi mdi-shield-half-full"

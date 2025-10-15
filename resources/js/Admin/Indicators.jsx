@@ -22,6 +22,8 @@ const Indicators = () => {
     // Form elements ref
     const idRef = useRef();
     const symbolRef = useRef();
+    const numberRef = useRef();
+    const suffixRef = useRef();
     const nameRef = useRef();
     const descriptionRef = useRef();
 
@@ -32,9 +34,10 @@ const Indicators = () => {
         else setIsEditing(false);
 
         idRef.current.value = data?.id ?? "";
-        // symbolRef.current.value = data?.symbol ?? "";
         symbolRef.image.src = `/api/indicator/media/${data?.symbol}`;
         symbolRef.current.value = null;
+        numberRef.current.value = data?.number ?? "";
+        suffixRef.current.value = data?.suffix ?? "";
         nameRef.current.value = data?.name ?? "";
         descriptionRef.current.value = data?.description ?? "";
 
@@ -46,7 +49,8 @@ const Indicators = () => {
 
         const request = {
             id: idRef.current.value || undefined,
-            // symbol: symbolRef.current.value,
+            number: numberRef.current.value,
+            suffix: suffixRef.current.value,
             name: nameRef.current.value,
             description: descriptionRef.current.value,
         };
@@ -158,7 +162,22 @@ const Indicators = () => {
                         dataField: "name",
                         caption: "Titulo",
                     },
-
+                    {
+                        dataField: "number",
+                        caption: "Número",
+                        width: "80px",
+                    },
+                    {
+                        dataField: "suffix",
+                        caption: "Sufijo",
+                        width: "70px",
+                        cellTemplate: (container, { data }) => {
+                            ReactAppend(
+                                container,
+                                <span className="badge bg-primary">{data.suffix || '-'}</span>
+                            );
+                        },
+                    },
                     {
                         dataField: "description",
                         caption: "Descripción",
@@ -236,18 +255,33 @@ const Indicators = () => {
                     <input ref={idRef} type="hidden" />
                     <ImageFormGroup
                         eRef={symbolRef}
-                        label="Imagen"
+                        label="Imagen/Ícono"
                         aspect={1}
                         fit="contain"
                         required
                         col="col-sm-4"
                     />
                     <div className="col-md-8">
-                        <InputFormGroup eRef={nameRef} label="Título" />
-                        {/*<InputFormGroup eRef={symbolRef} label='Símbolo' col='col-sm-4' rows={2} required />*/}
+                        <InputFormGroup eRef={nameRef} label="Título" required />
+                        <div className="row">
+                            <InputFormGroup 
+                                eRef={numberRef} 
+                                label="Número" 
+                                type="number"
+                                col="col-md-6" 
+                                required 
+                            />
+                            <InputFormGroup 
+                                eRef={suffixRef} 
+                                label="Sufijo (ej: +, %, /7)" 
+                                col="col-md-6"
+                                placeholder="ej: +, %, /7"
+                            />
+                        </div>
                         <TextareaFormGroup
                             eRef={descriptionRef}
                             label="Descripción"
+                            rows={2}
                         />
                     </div>
                 </div>

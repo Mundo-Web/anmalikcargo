@@ -141,6 +141,7 @@ const Strengths = () => {
                                         objectFit: "contain",
                                         objectPosition: "center",
                                         borderRadius: "4px",
+                                        backgroundColor: "#2e3e50",
                                     }}
                                 />
                             );

@@ -16,6 +16,8 @@ class Indicator extends Model
     protected $fillable = [
         'symbol',
         'name',
+        'number',
+        'suffix',
         'description',
         'visible',
         'status',
