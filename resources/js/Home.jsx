@@ -37,7 +37,8 @@ import {
   FaDiscord,
   FaSnapchat,
   FaPinterest,
-  FaReddit
+  FaReddit,
+  FaGlobe
 } from 'react-icons/fa'
 import { translations } from '../Data/translations.js';
 import GeneralRest from './actions/GeneralRest';
