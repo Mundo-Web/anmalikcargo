@@ -1124,10 +1124,10 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                         {statsData.slice(0, 4).map((stat, index) => (
                             <div
                                 key={index}
-                                className={`text-center text-white animate-fadeInUp`}
+                                className={`text-center max-w-72 text-white animate-fadeInUp`}
                                 style={{ animationDelay: `${index * 200 + 500}ms` }}
                             >
-                                <div className="w-16 h-16 lg:w-20 lg:h-20 bg-[#e5b437]/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-[#e5b437]/30">
+                                <div className="hidden w-16 h-16 lg:w-20 lg:h-20 bg-[#e5b437]/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-[#e5b437]/30">
                                     {stat.image ? (
                                         <img 
                                             src={`/api/indicator/media/${stat.image}`} 
@@ -1139,11 +1139,11 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                         <stat.icon className="w-8 h-8 lg:w-10 lg:h-10 text-[#e5b437]" />
                                     )}
                                 </div>
-                                <div className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 text-[#e5b437]">
+                                <div className="text-3xl lg:text-4xl xl:text-6xl font-bold mb-2 text-[#e5b437]">
                                     <AnimatedCounter end={stat.number} suffix={stat.suffix} />
                                 </div>
-                                <div className="text-lg lg:text-xl font-semibold mb-1">{stat.label}</div>
-                                <div className="text-sm text-gray-300">{stat.description}</div>
+                                <div className="text-lg lg:text-2xl font-semibold mb-1">{stat.label}</div>
+                                <div className="text-base lg:text-lg text-gray-300">{stat.description}</div>
                             </div>
                         ))}
                     </div>
@@ -1222,12 +1222,12 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                 className={`text-center text-white animate-bounceIn max-w-80 mx-auto`}
                                 style={{ animationDelay: `${index * 200}ms` }}
                             >
-                                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
+                                <div className="w-12 h-12 lg:w-20 lg:h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
                                     {stat.image ? (
                                         <img 
                                             src={`/api/strength/media/${stat.image}`} 
                                             alt={stat.label}
-                                            className="w-6 h-6 lg:w-8 lg:h-8 object-contain brightness-0 invert"
+                                            className="w-8 h-8 lg:w-12 lg:h-12 object-contain "
                                         />
                                     ) : (
                                         <stat.icon className="w-6 h-6 lg:w-8 lg:h-8" />
