@@ -34,7 +34,7 @@ const CoreValues = () => {
 
         idRef.current.value = data?.id ?? "";
         nameRef.current.value = data?.name ?? "";
-        imageRef.image.src = `/api/strength/media/${data?.image}`;
+        imageRef.current.image = `/api/core_value/media/${data?.image}`;
         imageRef.current.value = null;
         descriptionRef.current.value = data?.description ?? "";
 
@@ -135,14 +135,17 @@ const CoreValues = () => {
                             ReactAppend(
                                 container,
                                 <img
-                                    src={`/api/strength/media/${data.image}`}
+                                    src={`/api/core_value/media/${data.image}`}
                                     style={{
                                         width: "50px",
                                         aspectRatio: 1,
                                         objectFit: "contain",
                                         objectPosition: "center",
                                         borderRadius: "4px",
+                                        backgroundColor: "#cbcbd1",
+                                        padding: "4px",
                                     }}
+                                    onError={(e)=>{e.currentTarget.src='/api/cover/thumbnail/null'}}
                                 />
                             );
                         },

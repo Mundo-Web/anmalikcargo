@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Aboutus;
 use App\Models\Ad;
+use App\Models\CoreValue;
 use App\Models\Faq;
 use App\Models\General;
 use App\Models\Indicator;
@@ -43,6 +44,8 @@ class HomeController extends BasicController
         $generlas = General::where('lang_id', $langId)->get();
         $socials = Social::where('status', true)->where('visible', true)->get();
         $sliders = Slider::where('status', true)->where('visible', true)->get();
+
+        $core_values = CoreValue::where('status', true)->where('visible', true)->get();
         return [
 
             'indicators' => $indicators,
@@ -55,6 +58,7 @@ class HomeController extends BasicController
             'generals' => $generlas,
             'socials' => $socials,
             'sliders' => $sliders,
+            'core_values' => $core_values,
             // 'languagesSystem' => Lang::where('status', true)->where('visible', true)->get(),
         ];
     }

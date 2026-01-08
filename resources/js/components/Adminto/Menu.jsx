@@ -326,6 +326,12 @@ const Menu = ({
                                 >
                                     Fortalezas
                                 </MenuItem>
+                                 <MenuItem
+                                    href="/admin/core_values"
+                                    icon="mdi mdi-shield-half-full"
+                                >
+                                    Valores
+                                </MenuItem>
                               {/*  
                                 */}
                                 {/*  <MenuItem

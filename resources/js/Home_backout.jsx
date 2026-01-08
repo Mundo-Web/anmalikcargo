@@ -128,7 +128,7 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }) => {
     )
 }
 
-const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socials = [], staff_boss = null, benefits = [], indicators = [], landing = [], sliders = [], core_values = [] }) => {
+const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socials = [], staff_boss = null, benefits = [], indicators = [], landing = [], sliders = [] }) => {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [isFormSubmitting, setIsFormSubmitting] = useState(false)
@@ -494,8 +494,8 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
             <header
                 ref={headerRef}
                 className={` top-0 left-0 right-0 z-50 text-white transition-all duration-700 ease-in-out ${scrollY > 30
-                    ? 'fixed bg-[#202b3d]/95 backdrop-blur-md shadow-lg'
-                    : 'relative bg-[#202b3d]/90'
+                    ? 'fixed bg-[#2e3e50]/95 backdrop-blur-md shadow-lg'
+                    : 'relative bg-[#2e3e50]/90'
                     }`}
             >
                 {/* Top Bar - Hidden on small screens and when scrolled */}
@@ -548,7 +548,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
 
                 {/* Main Header */}
                 <div className={`transition-all duration-700 ease-in-out ${scrollY > 30
-                    ? 'bg-[#202b3d]/98 backdrop-blur-sm shadow-md'
+                    ? 'bg-[#2e3e50]/98 backdrop-blur-sm shadow-md'
                     : 'bg-black/20 backdrop-blur-sm'
                     }`}>
                     <div className="py-3 lg:py-4 px-4 xl:px-6">
@@ -559,7 +559,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                     <img src="./logo.png" alt="" className="h-12" />
                                     {/*
                 <div className="w-10 h-10 lg:w-12 lg:h-12 bg-[#e5b437] rounded-lg flex items-center justify-center flex-shrink-0 animate-pulse-slow">
-                  <span className="text-[#202b3d] font-bold text-lg lg:text-xl">M</span>
+                  <span className="text-[#2e3e50] font-bold text-lg lg:text-xl">M</span>
                 </div>
                 <div className="min-w-0">
                   <h1 className="text-lg lg:text-2xl font-bold truncate">AN MALIK CARGO</h1>
@@ -604,7 +604,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                                     href={whatsappSocial.link}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="bg-[#e5b437] hover:bg-[#d4a332] text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center space-x-2"
+                                                    className="bg-[#e5b437] hover:bg-[#d4a332] text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center space-x-2"
                                                     title={whatsappSocial.description || whatsappSocial.name}
                                                 >
                                                     <IconComponent />
@@ -613,7 +613,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                             );
                                         } else {
                                             return (
-                                                <button className="bg-[#e5b437] hover:bg-[#d4a332] text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                                                <button className="bg-[#e5b437] hover:bg-[#d4a332] text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
                                                     Cotizar Ahora
                                                 </button>
                                             );
@@ -643,7 +643,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                 {/* Mobile Menu */}
                 <div
                     ref={mobileMenuRef}
-                    className={`lg:hidden absolute top-full left-0 right-0 bg-[#202b3d]/95 backdrop-blur-md border-t border-[#3a4a5c]/50 transition-all duration-500 ease-in-out ${isMobileMenuOpen ? "opacity-100 visible transform translate-y-0" : "opacity-0 invisible transform -translate-y-2"
+                    className={`lg:hidden absolute top-full left-0 right-0 bg-[#2e3e50]/95 backdrop-blur-md border-t border-[#3a4a5c]/50 transition-all duration-500 ease-in-out ${isMobileMenuOpen ? "opacity-100 visible transform translate-y-0" : "opacity-0 invisible transform -translate-y-2"
                         }`}
                 >
                     <div className="container mx-auto px-4 py-4">
@@ -687,7 +687,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                 <MapPin className="w-4 h-4 text-[#e5b437]" />
                                 <span>Servicio 24/7 - Cobertura Global</span>
                             </div>
-                            <button className="w-full bg-[#e5b437] hover:bg-[#d4a332] text-white mt-4 py-3 rounded-lg font-medium transition-colors">
+                            <button className="w-full bg-[#e5b437] hover:bg-[#d4a332] text-white mt-4 py-3 rounded-md font-medium transition-colors">
                                 Solicitar Cotización
                             </button>
                         </div>
@@ -821,13 +821,13 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                 <div className="flex flex-col sm:flex-row gap-3 lg:hidden pt-4">
                                     <a
                                         href={slidersToShow[currentSlide]?.button_link || "#contacto"}
-                                        className="bg-[#e5b437] hover:bg-[#d4a332] text-white px-6 py-3 text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg animate-bounceIn animation-delay-700 text-center"
+                                        className="bg-[#e5b437] hover:bg-[#d4a332] text-white px-6 py-3 text-lg font-semibold rounded-md transition-all duration-300 hover:scale-105 hover:shadow-lg animate-bounceIn animation-delay-700 text-center"
                                     >
                                         {slidersToShow[currentSlide]?.button_text || "Cotizar Ahora"}
                                     </a>
                                     <a
                                         href="#servicios"
-                                        className="border border-white text-white hover:bg-white hover:text-[#202b3d] px-6 py-3 bg-transparent rounded-lg transition-all duration-300 hover:scale-105 animate-bounceIn animation-delay-900 text-center"
+                                        className="border border-white text-white hover:bg-white hover:text-[#2e3e50] px-6 py-3 bg-transparent rounded-md transition-all duration-300 hover:scale-105 animate-bounceIn animation-delay-900 text-center"
                                     >
                                         Ver Servicios
                                     </a>
@@ -839,7 +839,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                 <div className="bg-white/95 backdrop-blur-sm shadow-2xl rounded-lg transform hover:scale-105 transition-transform duration-300">
                                     <div className="p-6 xl:p-8">
                                         <div className="text-center mb-6">
-                                            <h3 className="text-xl xl:text-2xl font-bold text-[#202b3d] mb-2">Solicita tu Cotización</h3>
+                                            <h3 className="text-xl xl:text-2xl font-bold text-[#2e3e50] mb-2">Solicita tu Cotización</h3>
                                             <p className="text-gray-600 text-sm xl:text-base">
                                                 Obtén una cotización personalizada para tus envíos
                                             </p>
@@ -851,14 +851,14 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                                     ref={nameRef}
                                                     type="text"
                                                     placeholder="Nombre completo"
-                                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
+                                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
                                                     required
                                                 />
                                                 <input
                                                     ref={lastNameRef}
                                                     type="text"
                                                     placeholder="Apellidos"
-                                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
+                                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
                                                 />
                                             </div>
 
@@ -867,14 +867,14 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                                     ref={emailRef}
                                                     type="email"
                                                     placeholder="Correo electrónico"
-                                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
+                                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
                                                     required
                                                 />
                                                 <input
                                                     ref={phoneRef}
                                                     type="tel"
                                                     placeholder="Teléfono"
-                                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
+                                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
                                                     required
                                                 />
                                             </div>
@@ -885,7 +885,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                                     <button
                                                         type="button"
                                                         onClick={() => setShowServiceDropdown(!showServiceDropdown)}
-                                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300 bg-white text-left flex items-center justify-between"
+                                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300 bg-white text-left flex items-center justify-between"
                                                     >
                                                         <span className={formData.selectedService ? "text-gray-900" : "text-gray-500"}>
                                                             {formData.selectedService?.title || formData.selectedService?.name || "Selecciona un servicio"}
@@ -894,7 +894,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                                     </button>
 
                                                     {showServiceDropdown && (
-                                                        <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                                                        <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto">
                                                             {services.map((service) => (
                                                                 <button
                                                                     key={service.id}
@@ -917,13 +917,13 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                                 ref={descriptionRef}
                                                 placeholder="Describe tu consulta (tipo de carga, destino, etc.)"
                                                 rows={3}
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] resize-none transition-all duration-300"
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] resize-none transition-all duration-300"
                                             />
 
                                             <button
                                                 type="submit"
                                                 disabled={isFormSubmitting}
-                                                className="w-full bg-[#e5b437] hover:bg-[#d4a332] text-white py-3 text-lg font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 hover:shadow-lg"
+                                                className="w-full bg-[#e5b437] hover:bg-[#d4a332] text-white py-3 text-lg font-semibold rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 hover:shadow-lg"
                                             >
                                                 {isFormSubmitting ? "Enviando..." : "Solicitar Cotización"}
                                             </button>
@@ -932,7 +932,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                         <div className="mt-6 pt-6 border-t border-gray-200">
                                             <div className="flex items-center justify-center space-x-4 xl:space-x-6 text-xs xl:text-sm text-gray-600">
                                                 <div className="flex items-center space-x-1">
-                                                    <Clock className="w-4 h-4 text-[#202b3d]" />
+                                                    <Clock className="w-4 h-4 text-[#2e3e50]" />
                                                     <span>Respuesta en 24h</span>
                                                 </div>
                                                 <div className="flex items-center space-x-1">
@@ -955,7 +955,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                     <div className="bg-white shadow-xl rounded-lg animate-fadeInUp">
                         <div className="p-6">
                             <div className="text-center mb-6">
-                                <h3 className="text-xl font-bold text-[#202b3d] mb-2">Solicita tu Cotización</h3>
+                                <h3 className="text-xl font-bold text-[#2e3e50] mb-2">Solicita tu Cotización</h3>
                                 <p className="text-gray-600 text-sm">Obtén una cotización personalizada</p>
                             </div>
 
@@ -963,31 +963,31 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                 <input
                                     type="text"
                                     placeholder="Nombre completo"
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
                                     required
                                 />
                                 <input
                                     type="text"
                                     placeholder="Apellidos"
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
                                 />
                                 <input
                                     type="email"
                                     placeholder="Correo electrónico"
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
                                     required
                                 />
                                 <input
                                     type="tel"
                                     placeholder="Teléfono"
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
                                     required
                                 />
 
                                 {/* Selector de Servicios para móvil */}
                                 {services && services.length > 0 && (
                                     <select
-                                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
+                                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] transition-all duration-300"
                                         onChange={(e) => {
                                             const selectedService = services.find(s => s.id == e.target.value);
                                             setFormData({ ...formData, selectedService });
@@ -1005,12 +1005,12 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                 <textarea
                                     placeholder="Describe tu consulta"
                                     rows={3}
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] resize-none transition-all duration-300"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e5b437] focus:border-[#e5b437] resize-none transition-all duration-300"
                                 />
                                 <button
                                     type="submit"
                                     disabled={isFormSubmitting}
-                                    className="w-full bg-[#e5b437] hover:bg-[#d4a332] text-white py-3 font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 hover:shadow-lg"
+                                    className="w-full bg-[#e5b437] hover:bg-[#d4a332] text-white py-3 font-semibold rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 hover:shadow-lg"
                                 >
                                     {isFormSubmitting ? "Enviando..." : "Solicitar Cotización"}
                                 </button>
@@ -1029,7 +1029,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
             >
                 <div className="container mx-auto px-4 xl:px-6">
                     <div className="text-center mb-12 lg:mb-16">
-                        <h2 className="text-3xl lg:text-4xl font-bold text-[#202b3d] mb-4">
+                        <h2 className="text-3xl lg:text-4xl font-bold text-[#2e3e50] mb-4">
                             {t?.services?.title || "Nuestros Servicios"}
                         </h2>
                         <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -1051,7 +1051,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                         className="w-full h-full p-2 group-hover:rotate-12 transition-transform duration-500 ease-in-out"
                                     />
                                 </div>
-                                <h3 className="text-lg lg:text-xl font-bold text-[#202b3d] mb-3 lg:mb-4 group-hover:text-[#e5b437] transition-colors duration-300">
+                                <h3 className="text-lg lg:text-xl font-bold text-[#2e3e50] mb-3 lg:mb-4 group-hover:text-[#e5b437] transition-colors duration-300">
                                     {service.title}
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
@@ -1079,13 +1079,13 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
 
                 {/* Content */}
                 <div className="relative z-10 container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
-                    <h2 className="text-3xl lg:text-6xl max-w-md mx-auto  font-bold text-white mb-6 animate-fadeInUp">
-                        Red Logística en Sudamérica
+                    <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6 animate-fadeInUp">
+                        Red Logística <span className="text-[#2e3e50]">Global</span>
                     </h2>
-                    <p className="text-xl text-white max-w-lg mx-auto mb-8 animate-fadeInUp animation-delay-300">
-                     Conectamos tu carga con los principales corredores de comercio exterior de la region, mediante transporte terrestre internacional seguro y puntual.
+                    <p className="text-xl text-white max-w-3xl mx-auto mb-8 animate-fadeInUp animation-delay-300">
+                        Conectamos tu negocio con más de 50 países en 5 continentes
                     </p>
-                    <a href='#inicio' className="bg-[#202b3d] text-lg hover:bg-[#1a252f] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg animate-bounceIn animation-delay-500">
+                    <a href='#inicio' className="bg-[#2e3e50] hover:bg-[#1a252f] text-white px-8 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg animate-bounceIn animation-delay-500">
                         Consúltanos
                     </a>
                 </div>
@@ -1104,18 +1104,17 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                         backgroundImage: "url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6l6edApZXXTPmeNpbLgzjWKr0dqu1eP3XqnaiQo4Vtj-NZqOpoZ4VINl642EofQS6QzF_YV1HUsTBVnbWgxxqlSo85sCJETq3eFECFX_sve1-5vxDzgN_v_03kck4_8_wjinHGInjag/s2980/AdobeStock_195584994.jpeg')",
                     }}
                 >
-                    <div className="absolute inset-0 bg-[#202b3d]/90"></div>
+                    <div className="absolute inset-0 bg-[#2e3e50]/90"></div>
                 </div>
 
                 {/* Content */}
                 <div className="relative z-10 container mx-auto px-4 xl:px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl lg:text-6xl mx-auto font-bold max-w-xl text-white mb-6 animate-slideInUp">
-                            Eficiencia <span className="text-[#e5b437]">logística</span> que cruza fronteras
-                              
+                        <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 animate-slideInUp">
+                            Líderes en <span className="text-[#e5b437]">Logística Global</span>
                         </h2>
                         <p className="text-xl text-gray-200 max-w-3xl mx-auto animate-slideInUp animation-delay-300">
-                         Transportamos tu carga por carretera entre Perú, Chile, Argentina, Brasil, Uruguay, Paraguay, Colombia y Ecuador, por vía marítima desde Estados Unidos, gestionando la documentácion y el seguimiento hasta la entrega.
+                            Más de una década conectando empresas con el mundo a través de soluciones logísticas innovadoras
                         </p>
                     </div>
 
@@ -1149,7 +1148,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                     </div>
 
                     {/* Features Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 hidden" hidden>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {benefits && benefits.length > 0 ? (
                             benefits.slice(0, 6).map((benefit, index) => (
                                 <div
@@ -1215,17 +1214,16 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
             >
                 <div className="container mx-auto px-4 xl:px-6">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                         {benefits && benefits.length > 0 && (
-                            benefits.slice(0, 4).map((stat, index) => (
+                        {statsData.slice(0, 4).map((stat, index) => (
                             <div
                                 key={index}
-                                className={`text-center text-white animate-bounceIn max-w-80 mx-auto`}
+                                className={`text-center text-white animate-bounceIn`}
                                 style={{ animationDelay: `${index * 200}ms` }}
                             >
                                 <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
                                     {stat.image ? (
                                         <img 
-                                            src={`/api/strength/media/${stat.image}`} 
+                                            src={`/api/indicator/media/${stat.image}`} 
                                             alt={stat.label}
                                             className="w-6 h-6 lg:w-8 lg:h-8 object-contain brightness-0 invert"
                                         />
@@ -1234,11 +1232,10 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                     )}
                                 </div>
                                 <div className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 lg:mb-2">
-                                  {stat.name}
+                                    <AnimatedCounter end={stat.number} suffix={stat.suffix} />
                                 </div>
-                                <div className="text-sm lg:text-base font-medium">{stat.description}</div>
+                                <div className="text-sm lg:text-base font-medium">{stat.label}</div>
                             </div>
-                            )
                         ))}
                     </div>
                 </div>
@@ -1248,41 +1245,34 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
             <section
                 ref={aboutRef}
                 id="nosotros"
-                className={`py-12 lg:py-20 bg-[#202b3d] text-white transition-all duration-1000 ${aboutVisible ? "animate-fadeInUp" : "opacity-0 translate-y-10"
+                className={`py-12 lg:py-20 bg-[#2e3e50] text-white transition-all duration-1000 ${aboutVisible ? "animate-fadeInUp" : "opacity-0 translate-y-10"
                     }`}
             >
                 <div className="container mx-auto px-4 xl:px-6">
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                         <div className="order-2 lg:order-1 animate-slideInLeft">
-                            <h2 className="text-3xl lg:text-5xl font-bold mb-4 lg:mb-6">
+                            <h2 className="text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">
                                 Sobre <span className="text-[#e5b437]">AN MALIK CARGO</span>
                             </h2>
                             <p className="text-lg lg:text-xl text-gray-300 mb-6 lg:mb-8 leading-relaxed">
-                              Somos una empresa peruana especializada en transporte internacional de carga por carretera Operamos a lo largo de los príncipales corredores de comercio exterior de Sudamérica, integrando transporte y gestion documental en frontera.
+                                Con años de experiencia en el sector logístico, nos hemos consolidado como líderes en soluciones de
+                                transporte y distribución. Nuestro compromiso es conectar tu negocio con el mundo de manera eficiente y
+                                segura.
                             </p>
 
                             <div className="grid grid-cols-3 gap-4 lg:gap-6 mb-6 lg:mb-8">
-                                {core_values.map((stat, index) => (
-                                    <div key={index} className=" animate-fadeInUp" style={{ animationDelay: `${(index + 1) * 200 + 100}ms` }}>
-                                     <div className='flex gap-4'>
-                                          {stat.image ? (
-                                        <img 
-                                            src={`/api/core_value/media/${stat.image}`} 
-                                            alt={stat.label}
-                                            className="h-10 lg:h-12 w-auto object-contain "
-                                        />
-                                    ) : (
-                                        <stat.icon className="w-6 h-6 lg:w-8 lg:h-8" />
-                                    )}
-                                        <div className="text-base lg:text-lg font-semibold text-gray-300">{stat.name}</div>
-                                     </div>
-                                        <div className="text-xs lg:text-base mt-2 text-gray-300">{stat.description}</div>
+                                {statsData.slice(0, 3).map((stat, index) => (
+                                    <div key={index} className="text-center animate-fadeInUp" style={{ animationDelay: `${(index + 1) * 200 + 100}ms` }}>
+                                        <div className="text-2xl lg:text-3xl font-bold text-[#e5b437] mb-1 lg:mb-2">
+                                            <AnimatedCounter end={stat.number} suffix={stat.suffix} />
+                                        </div>
+                                        <div className="text-xs lg:text-sm text-gray-300">{stat.label}</div>
                                     </div>
                                 ))}
                             </div>
 
-                            <a href='#inicio' className="inline-block bg-[#e5b437] hover:bg-[#d4a332] text-white px-8 lg:px-10 py-3 lg:py-4 rounded-lg text-base lg:text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg animate-bounceIn animation-delay-900">
-                                Cotiza tu envío
+                            <a href='#inicio' className="bg-[#e5b437] hover:bg-[#d4a332] text-white px-6 lg:px-8 py-2 lg:py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg animate-bounceIn animation-delay-900">
+                                Contactenos
                             </a>
                         </div>
 
@@ -1292,7 +1282,9 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                 alt="About AN MALIK CARGO"
                                 className="rounded-lg shadow-2xl w-full transform hover:scale-105 transition-transform duration-300"
                             />
-                          
+                            <div className="absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-6 w-16 h-16 lg:w-24 lg:h-24 bg-[#2b604b] rounded-lg flex items-center justify-center animate-pulse">
+                                <Package className="w-8 h-8 lg:w-12 lg:h-12 text-white" />
+                            </div>
                         </div>
                     </div>
                 </div>
