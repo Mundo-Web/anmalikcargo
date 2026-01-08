@@ -1233,10 +1233,10 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                                         <stat.icon className="w-6 h-6 lg:w-8 lg:h-8" />
                                     )}
                                 </div>
-                                <div className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 lg:mb-2">
+                                <div className="text-2xl text-[#011730] lg:text-3xl xl:text-4xl font-bold mb-1 lg:mb-2">
                                   {stat.name}
                                 </div>
-                                <div className="text-sm lg:text-base font-medium">{stat.description}</div>
+                                <div className="text-sm text-[#011730] lg:text-base font-medium">{stat.description}</div>
                             </div>
                             )
                         ))}
