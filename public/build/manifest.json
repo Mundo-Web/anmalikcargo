@@ -550,9 +550,13 @@
       "_index-DO3Aws4m.js"
     ]
   },
-  "_translations-CwV5UmiO.js": {
-    "file": "assets/translations-CwV5UmiO.js",
-    "name": "translations",
+  "_translations-CoUjjROA.js": {
+    "file": "assets/translations-CoUjjROA.js",
+    "name": "translations"
+  },
+  "_trending-up-CpA_NwJ5.js": {
+    "file": "assets/trending-up-CpA_NwJ5.js",
+    "name": "trending-up",
     "imports": [
       "_createLucideIcon-Cx5eUsrb.js"
     ]
@@ -2510,7 +2514,7 @@
     ]
   },
   "resources/js/Home.jsx": {
-    "file": "assets/Home-BWcwzV4W.js",
+    "file": "assets/Home-STaNbgQ9.js",
     "name": "Home",
     "src": "resources/js/Home.jsx",
     "isEntry": true,
@@ -2522,7 +2526,6 @@
       "resources/js/components/Tailwind/DetailProduct/Detail.jsx",
       "_index-B80Lgev0.js",
       "_index-Clx-Subw.js",
-      "_translations-CwV5UmiO.js",
       "_GeneralRest-CvIEhB1j.js",
       "resources/js/components/Blog/Filter.jsx",
       "_MessagesRest-6a4rHQg0.js",
@@ -2534,6 +2537,7 @@
       "resources/js/components/Tailwind/Products/ProductCarousel.jsx",
       "resources/js/components/About/Strengths.jsx",
       "_circle-check-big-BiFsVO0f.js",
+      "_trending-up-CpA_NwJ5.js",
       "_phone-DwGZSiO4.js",
       "_x-D3W62-Y-.js",
       "_shield-5Yfwy17d.js",
@@ -2552,7 +2556,7 @@
     ]
   },
   "resources/js/HomeDokux.jsx": {
-    "file": "assets/HomeDokux-CGI_TH_h.js",
+    "file": "assets/HomeDokux-BYAKc3DN.js",
     "name": "HomeDokux",
     "src": "resources/js/HomeDokux.jsx",
     "isEntry": true,
@@ -2563,7 +2567,7 @@
       "_CreateReactScript-Bj11ghWz.js",
       "resources/js/components/Tailwind/DetailProduct/Detail.jsx",
       "_index-B80Lgev0.js",
-      "_translations-CwV5UmiO.js",
+      "_translations-CoUjjROA.js",
       "_GeneralRest-CvIEhB1j.js",
       "resources/js/components/Blog/Filter.jsx",
       "_MessagesRest-6a4rHQg0.js",
@@ -2573,6 +2577,7 @@
       "_circle-check-big-BiFsVO0f.js",
       "_phone-DwGZSiO4.js",
       "_shield-5Yfwy17d.js",
+      "_trending-up-CpA_NwJ5.js",
       "_chevron-up-FRL1uyYn.js",
       "_chevron-down-CyYB_9vX.js",
       "_file-text-Bl06Zqcq.js",
@@ -2589,7 +2594,7 @@
     ]
   },
   "resources/js/Home_backout.jsx": {
-    "file": "assets/Home_backout-Bp-V8OKc.js",
+    "file": "assets/Home_backout-CcfoHLCx.js",
     "name": "Home_backout",
     "src": "resources/js/Home_backout.jsx",
     "isEntry": true,
@@ -2601,7 +2606,7 @@
       "resources/js/components/Tailwind/DetailProduct/Detail.jsx",
       "_index-B80Lgev0.js",
       "_index-Clx-Subw.js",
-      "_translations-CwV5UmiO.js",
+      "_translations-CoUjjROA.js",
       "_GeneralRest-CvIEhB1j.js",
       "resources/js/components/Blog/Filter.jsx",
       "_MessagesRest-6a4rHQg0.js",
@@ -2613,6 +2618,7 @@
       "resources/js/components/Tailwind/Products/ProductCarousel.jsx",
       "resources/js/components/About/Strengths.jsx",
       "_circle-check-big-BiFsVO0f.js",
+      "_trending-up-CpA_NwJ5.js",
       "_phone-DwGZSiO4.js",
       "_x-D3W62-Y-.js",
       "_shield-5Yfwy17d.js",
@@ -3509,7 +3515,7 @@
     ]
   },
   "resources/js/components/Adminto/form/PasswordFormGroup.jsx": {
-    "file": "assets/PasswordFormGroup-IlEDNq44.js",
+    "file": "assets/PasswordFormGroup-Dr3wPUh9.js",
     "name": "PasswordFormGroup",
     "src": "resources/js/components/Adminto/form/PasswordFormGroup.jsx",
     "isEntry": true,
@@ -3561,7 +3567,7 @@
     ]
   },
   "resources/js/components/Adminto/form/TextareaFormGroup.jsx": {
-    "file": "assets/TextareaFormGroup-Dr3wPUh9.js",
+    "file": "assets/TextareaFormGroup-IlEDNq44.js",
     "name": "TextareaFormGroup",
     "src": "resources/js/components/Adminto/form/TextareaFormGroup.jsx",
     "isEntry": true,
@@ -4429,10 +4435,10 @@
     ]
   },
   "resources/js/components/Test/Email.jsx": {
-    "file": "assets/Email-CkzTC27z.js",
+    "file": "assets/Email-B5YG0Wtk.js",
     "name": "Email",
     "src": "resources/js/components/Test/Email.jsx",
-    "isDynamicEntry": true,
+    "isEntry": true,
     "imports": [
       "resources/js/Admin/FileViewer.jsx",
       "_index-B80Lgev0.js",
@@ -4617,7 +4623,7 @@
     ]
   },
   "resources/js/components/form/PasswordFormGroup.jsx": {
-    "file": "assets/PasswordFormGroup-Dr3wPUh9.js",
+    "file": "assets/PasswordFormGroup-IlEDNq44.js",
     "name": "PasswordFormGroup",
     "src": "resources/js/components/form/PasswordFormGroup.jsx",
     "isEntry": true,
@@ -4659,7 +4665,7 @@
     ]
   },
   "resources/js/components/form/TextareaFormGroup.jsx": {
-    "file": "assets/TextareaFormGroup-IlEDNq44.js",
+    "file": "assets/TextareaFormGroup-Dr3wPUh9.js",
     "name": "TextareaFormGroup",
     "src": "resources/js/components/form/TextareaFormGroup.jsx",
     "isEntry": true,

@@ -1030,18 +1030,21 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                 <div className="container mx-auto px-4 xl:px-6">
                     <div className="text-center mb-12 lg:mb-16">
                         <h2 className="text-3xl lg:text-4xl font-bold text-[#202b3d] mb-4">
-                            {t?.services?.title || "Nuestros Servicios"}
+                            {/*t?.services?.title || "Nuestros Servicios"*/}
+                            Soluciones Logísticas que Cruzan Fronteras
+
                         </h2>
                         <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-                            {t?.services?.subtitle || "Ofrecemos soluciones logísticas completas adaptadas a las necesidades de tu negocio"}
+                            {/*t?.services?.subtitle || "Ofrecemos soluciones logísticas completas adaptadas a las necesidades de tu negocio"*/}
+                        Movemos tu carga con eficiencia, seguridad y respaldo internacional
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
                         {services?.map((service, index) => (
                             <div
                                 key={index}
-                                className={`group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 p-6 lg:p-8 text-center transform hover:scale-105 animate-fadeInUp`}
+                                className={`group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 p-6 lg:p-8 text-center transform hover:scale-105 animate-fadeInUp w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.5rem)]`}
                                 style={{ animationDelay: `${index * 200}ms` }}
                             >
                                 <div className="w-16 p-2 h-16 lg:w-20 lg:h-20 mx-auto mb-4 lg:mb-6 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500" style={{ backgroundColor: service.color }}>
