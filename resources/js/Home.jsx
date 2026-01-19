@@ -1264,7 +1264,7 @@ const Home = ({ services = [], testimonies = [], faqs = [], generals = [], socia
                               Somos una empresa peruana especializada en transporte internacional de carga por carretera Operamos a lo largo de los príncipales corredores de comercio exterior de Sudamérica, integrando transporte y gestion documental en frontera.
                             </p>
 
-                            <div className="grid grid-cols-3 gap-4 lg:gap-6 mb-6 lg:mb-8">
+                            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-6 lg:mb-8">
                                 {core_values.map((stat, index) => (
                                     <div key={index} className=" animate-fadeInUp" style={{ animationDelay: `${(index + 1) * 200 + 100}ms` }}>
                                      <div className='flex gap-4'>
